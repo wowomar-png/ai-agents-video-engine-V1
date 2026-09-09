@@ -3,6 +3,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 5 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/lesson.json'
+      - 'package.json'
+      - '.github/workflows/render.yml'
 permissions:
   contents: read
 jobs:
