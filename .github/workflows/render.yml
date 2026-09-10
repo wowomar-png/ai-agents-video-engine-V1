@@ -8,6 +8,7 @@ on:
       - "public/**"
       - "narration/**"
       - "package*.json"
+      - ".github/workflows/render.yml"
 permissions:
   contents: read
 jobs:
@@ -29,7 +30,7 @@ jobs:
       - name: Echo · Generate English narration
         run: |
           mkdir -p public/audio
-          python3 -m piper -m en_US-lessac-medium --data-dir .piper -f public/audio/narration-long.wav --length-scale 1.12 --input-file narration/long.txt
+          python3 -m piper -m en_US-lessac-medium --data-dir .piper -f public/audio/narration-long.wav --length-scale 1.05 --input-file narration/long.txt
           node scripts/export-short-narration.mjs
           for i in 1 2 3 4 5; do
             python3 -m piper -m en_US-lessac-medium --data-dir .piper -f "public/audio/short-$i.wav" --input-file "narration/short-$i.txt"
