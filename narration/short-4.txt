@@ -1,0 +1,1 @@
+A fault code is not a parts order. The code points to a detected condition or system. Test the cause before replacing a sensor, valve or other component. Diagnose first. Buy parts second.

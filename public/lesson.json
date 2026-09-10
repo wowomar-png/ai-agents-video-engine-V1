@@ -1,1 +1,27 @@
-{"title":"Why Your Car Uses More Fuel Than It Should","hook":"Five common causes explained without mechanic jargon.","format":"long","sections":[{"heading":"Low tire pressure creates drag","body":"Soft tires deform more as they roll. The engine must work harder, so fuel consumption rises.","accent":"#2f9bff"},{"heading":"Short trips keep the engine cold","body":"A cold engine runs less efficiently. Repeated short journeys can use more fuel per kilometre than one longer trip.","accent":"#ff8a34"},{"heading":"Hard acceleration wastes energy","body":"Smooth acceleration and early anticipation reduce unnecessary braking and repeated acceleration.","accent":"#58d6a9"}],"callToAction":"Check tire pressure when the tires are cold, then track one full tank."}
+{
+  "title": "Why Your Car Uses More Fuel Than It Should",
+  "hook": "Measure the change, check the simple causes, then diagnose the evidence.",
+  "format": "long",
+  "sections": [
+    {"heading":"Measure before replacing parts","body":"Use a full-tank calculation over two or three comparable refills. Dashboard estimates move with traffic, wind, slopes and recent idling.","accent":"#36dff6"},
+    {"heading":"Set cold tire pressure correctly","body":"Use the pressure on the driver-door label, not the maximum on the tire sidewall. Repeated pressure loss needs inspection.","accent":"#ff9b4b"},
+    {"heading":"Smooth driving saves repeated work","body":"Rapid acceleration demands high power. Late braking throws away speed that fuel already created. Look ahead and leave space.","accent":"#58d6a9"},
+    {"heading":"High speed increases air resistance","body":"Fuel economy normally falls as highway speed rises. Use a safe steady speed and compare the same car on similar routes.","accent":"#9b7cff"},
+    {"heading":"Idling gives zero distance","body":"Air conditioning may be necessary in extreme heat, but forgotten waiting time still burns fuel without moving the car.","accent":"#ff6f82"},
+    {"heading":"Short trips keep systems inefficient","body":"A cold engine and transmission have more friction. Combining errands can reduce repeated warm-up periods.","accent":"#36dff6"},
+    {"heading":"Air conditioning is a real load","body":"Vent trapped heat briefly, then use recirculation once the cabin begins cooling. Comfort and visibility remain the priority.","accent":"#ff9b4b"},
+    {"heading":"Weight and roof cargo matter","body":"Permanent boot clutter costs energy during acceleration. Unused roof boxes and racks also disturb airflow at highway speed.","accent":"#58d6a9"},
+    {"heading":"Read warning lights properly","body":"A fault code identifies a system or condition, not automatically a failed part. Diagnose the cause before buying components.","accent":"#9b7cff"},
+    {"heading":"Use the specified oil and fuel","body":"More expensive is not automatically better. Follow the engine-oil specification and octane requirement in the owner manual.","accent":"#ff6f82"},
+    {"heading":"Check for mechanical drag","body":"Pulling, a hot wheel, abnormal wear, vibration or poor coasting can point to brakes, alignment, bearings, tires or transmission problems.","accent":"#36dff6"},
+    {"heading":"Run a controlled seven-day test","body":"Correct pressure, remove unused cargo, drive smoothly and log two tanks. If the loss remains, take the evidence to a technician.","accent":"#ff9b4b"}
+  ],
+  "callToAction": "Check all four tires cold and start a two-tank fuel log.",
+  "shorts": [
+    {"hook":"Stop using the tire sidewall number","body":"The sidewall shows a tire limit. Your normal cold pressure is listed on the driver-door label or in the owner manual.","cta":"Check all four tires before driving."},
+    {"hook":"Your fuel-economy display can mislead you","body":"Traffic, hills, wind and recent idling can change the dashboard estimate fast. Confirm the trend with full-tank calculations.","cta":"Compare at least two similar tanks."},
+    {"hook":"Hard braking wastes fuel you already burned","body":"Late braking throws away speed. Leave space, look farther ahead and release the accelerator earlier when traffic slows.","cta":"Drive smoothly, not dangerously slowly."},
+    {"hook":"A fault code is not a parts order","body":"The code points to a detected condition or system. Test the cause before replacing a sensor, valve or other component.","cta":"Diagnose first. Buy parts second."},
+    {"hook":"Run this seven-day fuel test","body":"Set cold tire pressure, remove unused cargo, drive normally but smoothly, avoid forgotten idling and calculate the next refill.","cta":"Repeat once before judging the result."}
+  ]
+}

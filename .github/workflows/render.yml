@@ -1,30 +1,49 @@
-name: Render car lesson
+name: Produce car lesson
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'public/lesson.json'
-      - 'package.json'
-      - '.github/workflows/render.yml'
 permissions:
   contents: read
 jobs:
-  render:
+  production:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Axel · Load approved car research
+        uses: actions/checkout@v4
+      - name: Torque · Validate 12-minute script
+        run: |
+          WORDS=$(wc -w < narration/long.txt)
+          echo "Narration words: $WORDS"
+          test "$WORDS" -ge 1750
+      - name: Echo · Install local AI narrator
+        run: |
+          python3 -m pip install --disable-pip-version-check piper-tts
+          python3 -m piper.download_voices --data-dir .piper en_US-lessac-medium
+      - name: Echo · Generate English narration
+        run: |
+          mkdir -p public/audio
+          python3 -m piper -m en_US-lessac-medium --data-dir .piper -f public/audio/narration-long.wav --length-scale 1.12 --input-file narration/long.txt
+          node scripts/export-short-narration.mjs
+          for i in 1 2 3 4 5; do
+            python3 -m piper -m en_US-lessac-medium --data-dir .piper -f "public/audio/short-$i.wav" --input-file "narration/short-$i.txt"
+          done
+      - name: Lens · Verify visual scene package
+        run: node -e "const x=require('./public/lesson.json');if(x.sections.length<10||x.shorts.length!==5)process.exit(1)"
+      - name: Render · Install Remotion
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
-      - run: npm run render:all
-      - uses: actions/upload-artifact@v4
+          cache: npm
+      - run: npm ci
+      - name: Render · Build 12-minute video
+        run: npm run render:long
+      - name: Clip · Build five Shorts
+        run: npm run render:shorts
+      - name: Render · Build thumbnail
+        run: npm run render:thumbnail
+      - name: Package · Download files
+        uses: actions/upload-artifact@v4
         with:
-          name: car-learning-videos
-          path: out/*.mp4
+          name: learn-your-car-upload-pack
+          path: out/*
           retention-days: 7
